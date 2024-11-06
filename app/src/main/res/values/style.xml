@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <resources>
+        <!-- Стиль для BottomNavigationView -->
+        <style name="StyleBottomNavigationView">
+            <item name="android:background">@color/bottom_navigation_background</item> <!-- Цвет фона -->
+            <item name="itemIconTint">@color/bottom_navigation_icon_color</item> <!-- Цвет иконок -->
+            <item name="itemTextColor">@color/bottom_navigation_text_color</item> <!-- Цвет текста -->
+        </style>
+    <style name="StyleToolbar">
+        <item name="colorPrimary">@color/toolbar_background_color</item> <!-- Цвет фона -->
+        <item name="android:textColorPrimary">@color/toolbar_text_color</item> <!-- Цвет текста -->
+    </style>
+
+
+    </resources>
+
