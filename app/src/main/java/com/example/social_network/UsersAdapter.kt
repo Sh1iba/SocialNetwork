@@ -8,15 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.social_network.data.model.LoginResponse
+
+import com.example.social_network.data.model.SearchResponse
 import com.example.social_network.databinding.FragmentSearchBinding
 
 class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
 
-    private val users = mutableListOf<LoginResponse>()
+    private val users = mutableListOf<SearchResponse>()
 
     // Метод для обновления данных в адаптере
-    fun submitList(newUsers: List<LoginResponse>) {
+    fun submitList(newUsers: List<SearchResponse>) {
         users.clear()
         users.addAll(newUsers)
         notifyDataSetChanged()
@@ -43,7 +44,7 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
         private val textViewProfilePictureUrl: TextView = view.findViewById(R.id.textViewProfilePictureUrl)
 
         // Метод для привязки данных к View
-        fun bind(user: LoginResponse) {
+        fun bind(user: SearchResponse) {
             textViewFullName.text = user.fullName
             textViewId.text = "ID: ${user.userId}"
             textViewProfilePictureUrl.text = user.profilePictureUrl

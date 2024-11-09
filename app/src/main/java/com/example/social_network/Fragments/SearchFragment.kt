@@ -37,13 +37,16 @@ class SearchFragment : Fragment() {
 
         // Установка слушателя на кнопку поиска
         binding.buttonSearch.setOnClickListener {
-            Log.d("IWAAAAANTTHIS SHIT","MAAAAAMAAAAA")
+            // Логируем нажатие
+            Log.d("BUTTON_CLICK", "Button clicked!")
+
             val query = binding.editTextSearch.text.toString()
             searchUsers(query)
         }
 
         return binding.root
     }
+
 
     // Метод для поиска пользователей по имени
     private fun searchUsers(query: String) {
@@ -58,7 +61,7 @@ class SearchFragment : Fragment() {
                 val response = withContext(Dispatchers.IO) {
                     apiService.searchUsersByName(query) // Получаем список пользователей
                 }
-                Log.d("IWAAAAANTTHIS SHIT",response.toString())
+                Log.d("IWAAAAANTTHIS SHIT", response.toString())
                 // Передаем полученные данные в адаптер для отображения
                 adapter.submitList(response)
             } catch (e: Exception) {

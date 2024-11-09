@@ -10,3 +10,10 @@ data class LoginResponse(
     val dateOfBirth: String,
     val followersCount: Int
 )
+data class SearchResponse(
+    val userId: Long,
+
+    val fullName: String,
+
+    val profilePictureUrl: String
+)
