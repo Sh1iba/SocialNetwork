@@ -5,6 +5,10 @@
         android:id="@+id/profile"
         android:icon="@drawable/home_ico"
         android:title="Профиль" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search_ico"
+        android:title="Поиск" />
 
     <item
         android:id="@+id/chats"
