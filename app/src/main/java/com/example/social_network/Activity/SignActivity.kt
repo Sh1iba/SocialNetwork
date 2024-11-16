@@ -41,15 +41,18 @@ class SignActivity : AppCompatActivity() {
             try {
                 val apiService = getApiService()
                 val response = withContext(Dispatchers.IO) {
-                    apiService.login(loginRequest)
+                    if(apiService.login(loginRequest).isSuccessful) return@withContext apiService.login(loginRequest).body()
+                    else return@withContext null
                 }
 
                 Toast.makeText(this@SignActivity, "Login successful!", Toast.LENGTH_SHORT).show()
-                Log.d("OtvetServera", response.toString())
+                //Log.d("OtvetServera", response.toString())
 
                 val intent = Intent(this@SignActivity, MainActivity::class.java).apply {
-                    putExtra("fullName", response.fullName)
-                    putExtra("bio", response.bio)
+                    if (response != null) {
+                        putExtra("fullName", response.fullName)
+                        putExtra("bio", response.bio)
+                    }
                 }
                 startActivity(intent)
 
@@ -59,11 +62,5 @@ class SignActivity : AppCompatActivity() {
             }
         }
     }
-
-    fun onRegestration(view: View){
-
-    }
-
-
 }
 
