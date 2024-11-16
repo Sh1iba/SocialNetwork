@@ -63,7 +63,7 @@ class SearchFragment : Fragment() {
                 }
                 Log.d("IWAAAAANTTHIS SHIT", response.toString())
                 // Передаем полученные данные в адаптер для отображения
-                adapter.submitList(response)
+                response.body()?.let { adapter.submitList(it) }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Ошибка поиска: ${e.message}", Toast.LENGTH_LONG).show()
             }

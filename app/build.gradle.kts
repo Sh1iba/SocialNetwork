@@ -39,9 +39,15 @@ android {
     }
 }
 
+android.testOptions {
+    unitTests.all {
+        it.useJUnitPlatform()
+    }
+}
+
 dependencies {
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -49,4 +55,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation("io.kotest:kotest-runner-junit5:5.0.0")
+    testImplementation("io.kotest:kotest-assertions-core:5.0.0")
+    testImplementation("io.kotest:kotest-framework-engine:5.0.0")
+    testImplementation("io.kotest:kotest-property:5.0.0")
+
 }

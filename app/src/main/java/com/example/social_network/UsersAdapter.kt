@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -40,14 +42,11 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
     class UserViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         private val textViewFullName: TextView = view.findViewById(R.id.textViewFullName)
-        private val textViewId: TextView = view.findViewById(R.id.textViewId)
-        private val textViewProfilePictureUrl: TextView = view.findViewById(R.id.textViewProfilePictureUrl)
+        private val imageViewAvatar: ImageView = view.findViewById(R.id.imageViewAvatar)
 
         // Метод для привязки данных к View
         fun bind(user: SearchResponse) {
             textViewFullName.text = user.fullName
-            textViewId.text = "ID: ${user.userId}"
-            textViewProfilePictureUrl.text = user.profilePictureUrl
         }
     }
 }
