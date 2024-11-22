@@ -39,11 +39,6 @@ android {
     }
 }
 
-android.testOptions {
-    unitTests.all {
-        it.useJUnitPlatform()
-    }
-}
 
 dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -56,9 +51,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    testImplementation("io.kotest:kotest-runner-junit5:5.0.0")
-    testImplementation("io.kotest:kotest-assertions-core:5.0.0")
-    testImplementation("io.kotest:kotest-framework-engine:5.0.0")
-    testImplementation("io.kotest:kotest-property:5.0.0")
 
+    // Cucumber для интеграции с JUnit
+    testImplementation("io.cucumber:cucumber-java:7.14.0")
+    testImplementation("io.cucumber:cucumber-junit:7.14.0")
 }

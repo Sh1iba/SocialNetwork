@@ -2,15 +2,14 @@ package com.example.social_network
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.widget.Toolbar  // правильный импорт
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.social_network.Fragments.ChatsFragment
-import com.example.social_network.Fragments.ProfileFragment
-import com.example.social_network.Fragments.SearchFragment
-import com.example.social_network.Fragments.SettingsFragment
+import com.example.social_network.fragments.ChatsFragment
+import com.example.social_network.fragments.ProfileFragment
+import com.example.social_network.fragments.SearchFragment
+import com.example.social_network.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 

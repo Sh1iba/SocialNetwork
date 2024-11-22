@@ -1,4 +1,4 @@
-package com.example.social_network.Fragments
+package com.example.social_network.fragments
 
 import android.os.Bundle
 import android.util.Log
